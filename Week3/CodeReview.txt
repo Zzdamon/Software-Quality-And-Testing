@@ -8,6 +8,17 @@ Stage 1. Naming conventions
 - rename rezultat
 - rename valoare
 - remove hard coded values / magic numbers
+- validate your input values
+- replace the if-then-else checks for productType with switch
 
--validate your input values
-- replace the if-then-else chekcs for productType with switch
+Stage 2. KISS , Single Responsibility = > reduce functions complexity 
+
+- remove switch by using generic approach for each product type
+- out-source the validations
+- out-source the way the fidelity discount is computed
+
+Stage 3. Dependency Inversion Principle (DIP)
+
+- remove the dependency regarding the validation of input values
+- remove the dependency on the static values - they are given by the marketing team
+- remove the dependency on the way the fidelity discount is computed - Marketing will decide
