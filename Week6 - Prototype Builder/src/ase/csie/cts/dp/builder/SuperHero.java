@@ -13,7 +13,7 @@ public class SuperHero {
 	private SuperPowerInterface superPower;
 	private SuperPowerInterface superSuperPower;
 	
-	public SuperHero() {
+	private SuperHero() {
 		
 	}
 
@@ -38,5 +38,49 @@ public class SuperHero {
 	}
 	
 	
-	
+	public static class SuperHeroBuilder{
+		SuperHero superHero;
+		
+		public SuperHeroBuilder(String name, int lifePoints) {
+			superHero=new SuperHero();
+			this.superHero.name=name;
+			this.superHero.lifePoints=lifePoints;
+			
+		}
+		public SuperHeroBuilder isVillain() {
+			this.superHero.isVillain=true;
+			return this;
+		}
+		
+		public SuperHeroBuilder isWounded() {
+			this.superHero.isVillain=true;
+			return this;
+		}
+		
+		public SuperHeroBuilder setRightWeapon(WeaponInterface weapon) {
+			this.superHero.rightWeapon=weapon;
+			return this;
+		}
+		
+		public SuperHeroBuilder setLeftWeapon(WeaponInterface weapon) {
+			this.superHero.leftWeapon=weapon;
+			return this;
+		}
+		
+		public SuperHeroBuilder setSuperPower(SuperPowerInterface power) {
+			this.superHero.superPower=power;
+			return this;
+		}
+		
+		public SuperHeroBuilder setSuperSuperPower(SuperPowerInterface power) {
+			this.superHero.superSuperPower=power;
+			return this;
+		}
+		
+		public SuperHero build() {
+//			return new SuperHero(null, 0, false, false, null, null, null, null);
+			return this.superHero;
+		}
+		
+	}
 }
