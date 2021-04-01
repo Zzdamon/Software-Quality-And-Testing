@@ -22,3 +22,8 @@ Stage 3. Dependency Inversion Principle (DIP)
 - remove the dependency regarding the validation of input values
 - remove the dependency on the static values - they are given by the marketing team
 - remove the dependency on the way the fidelity discount is computed - Marketing will decide
+
+
+GENERAL:
+ General Programming:
+ - Always override toString (instead of using the to_string method, override toString)

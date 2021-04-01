@@ -1,0 +1,79 @@
+ CODE REVIEW
+ 
+1 CLEAN CODING
+ 
+ Formatting:
+  - Use camelCase : 
+  	rename loan_value to loanValue,
+  	account_Type to accountType
+  	to_string to toString
+  	
+ Meaningful Names:
+  -Use Intention-Revealing Names
+
+   rename loan(), print() and calculate() methods to something more meaningful
+
+ Functions  
+  - Do one Thing
+   calculate function can be split into more than one function (it does more than one thing)
+   reduce complexity of all functions: 
+   	- out-source the validations
+   	- out-source the way totalFee and mohtlyRate are computed
+   
+  
+ Exceptions
+ - Don't return Null - getMonthlyRate, loan, getRate may return null. Use an exception
+
+Classes
+  - Classes should be small! - Account class should be smaller
+  
+  - remove hard coded values / magic numbers
+  
+  
+ 2. Security
+ 	
+ 	
+ 	Fundamentals:
+ 	- Make class final if not being used for inheritance(make Account final)
+ 	- Minimize the accessibility of classes and members(make class fields private instead of public)
+	 
+ 	Mutability:
+ 	-Make public static fields final (to avoid caller changing the value) - make calculate method final
+ 
+	Input Validation
+	-Validate inputs (validate account_type to only include numbers 0-3)
+
+ 	
+  
+3. GENERAL:
+ General Programming:
+ - Always override toString (instead of using the to_string method, override toString)
+ - Minimize the scope of local variables (in calculate and print methods - account , vb)
+
+ Classes and Interfaces
+ - In public classes, use accessor methods, not public fields (make fields private instead of public, and make accesor methods for them)
+ 
+ Enums and Annotations
+ - Use enums instead of int constants (make STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3 as an enum
+ instead of int constants )
+ 
+ 
+ 
+ 
+ ///
+  3. KISS , Single Responsibility = > reduce functions complexity 
+
+- out-source the validations
+- out-source the way totalFee and mohtlyRate are computed
+  
+  
+  
+ 4. Dependency Inversion Principle (DIP)
+
+- remove the dependency regarding the validation of input values
+- remove the dependency on the static values 
+- remove the dependency on the way totalFee and mohtlyRate are computed
+ 
+ 
+ - use encapsulation principle: 
+ 	make the attributes private instead of public
