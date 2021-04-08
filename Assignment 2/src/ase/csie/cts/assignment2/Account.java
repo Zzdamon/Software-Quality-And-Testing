@@ -1,67 +1,97 @@
 package ase.csie.cts.assignment2;
 
-public class Account {
-	public double	loan_value,rate;	
-	public int	daysActive,account_Type;
-	public static final int	STANDARD=0,BUDGET=1,PREMIUM=2,SUPER_PREMIUM=3;
+import ase.csie.cts.assignment2.services.FeeComputationInterface;
+import ase.csie.cts.assignment2.services.MonthlyPaymentInterface;
+
+public final class Account {
+	private double	loanValue,monthlyPercentRate;	
+	private int	daysActive;
+	private AccountType accountType;
+	private MonthlyPaymentInterface monthlyPaymentService=null;
+	private FeeComputationInterface feeComputationService=null;
 	
-	public double loan() {
-		System.out.println("The loan value is " + this.loan_value);
-		return loan_value;
+
+	public void setFeeComputationService(FeeComputationInterface feeComputationService) {
+		if(feeComputationService==null) {
+			throw new NullPointerException();
+		}
+		this.feeComputationService = feeComputationService;
+	}
+
+	public void setMonthlyPaymentService(MonthlyPaymentInterface monthlyPaymentService) {
+		if(monthlyPaymentService==null) {
+			throw new NullPointerException();
+		}
+		this.monthlyPaymentService=monthlyPaymentService;
 	}
 	
-	public double getRate() {
-		System.out.println("The rate is "+rate);
-		return this.rate;
+	
+	public double getLoanValue() {
+		System.out.println("The loan value is " + this.loanValue);
+		return loanValue;
+	}
+	
+	public double getMonthlyPercentRate() {
+		System.out.println("The rate is "+monthlyPercentRate);
+		return this.monthlyPercentRate;
 	}
 	
 	//must have method - the lead has requested it in all classes
-	public double getMonthlyRate() {
-		return loan_value*rate;
+	public double getMonthlyPayment() {
+		return this.monthlyPaymentService.getMonthlyPayment(loanValue, monthlyPercentRate);
 	}
 	
-	public void setValue(double value) throws Exception {
-		if(value<0)
+	
+	public void setDaysActive(int daysActive) {
+		this.daysActive = daysActive;
+	}
+
+	
+	public void setLoanValue(double loanValue) throws Exception {
+		if(loanValue<0)
 			throw new Exception();
 		else
 		{
-			loan_value = value;
+			this.loanValue = loanValue;
 		}
 	}
-	
-	public String to_string() {
-		return "Loan: "+this.loan_value+"; rate: "+this.rate+"; days active:"+daysActive+"; Type: "+account_Type+";";
-	}
-	
-	public void print() {
-		int vb = 10;
-		System.out.println("This is an account");
+		
+	public double getAccountFee() {
+		return this.feeComputationService.calculateAccountFee(loanValue, accountType, monthlyPercentRate, daysActive);
+
 	}
 
-	public static double calculate(Account[] 	accounts)
+	public static final double calculateTotalFee(Account[] 	accounts)
 	{
-	double totalFee=0.0;
-	Account	account;
-	int temp = 365;
-	for	(int	i=0;i<accounts.length;i++)	{
-	account=accounts[i];
-	if(account.account_Type==Account.PREMIUM||account.account_Type==Account.SUPER_PREMIUM)	
-	totalFee+=.0125	*	(	//	1.25%	broker's	fee
-			account.loan_value*Math.pow(account.rate,(account.daysActive/365)) - account.loan_value);	//	interest-principal
-	}
-	return	totalFee;
+		double totalFee=0;
+		for (Account account : accounts) {
+			totalFee+=account.getAccountFee();
+		}
+		return totalFee;
 	}
 
-	public Account(double value, double rate, int account_Type) throws Exception {
-		if(value<0)
+	public Account(double loanValue, double monthlyPercentRate, AccountType accountType, FeeComputationInterface feeComputationService, MonthlyPaymentInterface monthlyPaymentService)
+			throws Exception {
+		if(loanValue<0)
 			throw new Exception();
 		else
 		{
-			loan_value = value;
+			this.loanValue = loanValue;
 		}
-		this.rate = rate;
-		this.account_Type = account_Type;
+		if(feeComputationService==null || monthlyPaymentService==null) {
+			throw new NullPointerException();
+		}
+		this.monthlyPercentRate = monthlyPercentRate;
+		this.accountType = accountType;
+		this.feeComputationService=feeComputationService;
+		this.monthlyPaymentService=monthlyPaymentService;
+
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Loan: "+this.loanValue+"; rate: "+this.monthlyPercentRate+"; days active:"+daysActive+"; Type: "+accountType+";";
+
+	}
+
 }
