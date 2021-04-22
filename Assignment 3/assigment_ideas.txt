@@ -1,0 +1,10 @@
+PWA for food delivery services
+
+IDEAS: 
+
+singleton - connection to db
+factory - user types maybe
+builder - order builder - get lat and lng from address using an api or smth
+prototype - for restaurant - so i dont have to wait for the api to return the lat lng
+decorator - user with connectionId for signalR ig  -- actually mai bn pt order - adding courier 
+adapter - for orderItem maybe? to use entityframework 
