@@ -1,0 +1,11 @@
+Progressive Web Application for Food Delivery Services
+
+
+6. Proxy
+	It provides a more secure authentification  
+	
+	pros:
+		- it is more secure
+	cons:
+		- I don't think there are any  
+ 

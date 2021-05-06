@@ -1,0 +1,10 @@
+Progressive Web Application for Food Delivery Services
+
+
+2. Factory 
+	It makes it easier to make different types of users: Clients and Couriers
+	
+	pros:
+		- easier to use the classes
+		- easier to understand the code that is written
+		

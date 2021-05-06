@@ -1,0 +1,12 @@
+Progressive Web Application for Food Delivery Services
+
+
+5. Decorator 
+	It provides a way to add a connection string to an object of type Client 
+
+	pros:
+		- can add the connection string when the client connects to the signalR hub, instead of keeping it in memory/ in the db 
+		(the connection string is different each time the client connects)
+	cons:
+		- it is easier (and this is the approach I chose for my thesis) to use a HashMap to keep the connection strings.
+		

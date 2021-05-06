@@ -1,10 +1,51 @@
-PWA for food delivery services
 
-IDEAS: 
+Progressive Web Application for Food Delivery Services
 
-singleton - connection to db
-factory - user types maybe
-builder - order builder - get lat and lng from address using an api or smth
-prototype - for restaurant - so i dont have to wait for the api to return the lat lng
-decorator - user with connectionId for signalR ig  -- actually mai bn pt order - adding courier 
-adapter - for orderItem maybe? to use entityframework 
+
+1. Singleton 	
+	It makes it so that only one connection to the database is created and used.
+	pros:
+		- less memory used
+	
+
+2. Factory 
+	It makes it easier to make different types of users: Clients and Couriers
+	
+	pros:
+		- easier to use the classes
+		- easier to understand the code that is written
+		
+
+3. Builder 
+	Order class has many attributes. Builder provides a constructor with only the mandatory attributes and setters for the others.
+
+	pros:
+		- only one constructor
+		- easy to understand the code
+		- easy to create objects
+
+4. Prototype 
+	It provides a way to copy an object of type Order so that I don't have to wait for the response of the Geolocation API 
+ 
+	pros:
+ 		- less requests to the Geolocation API
+ 		- faster
+ 		- less expensive (each request is payed) 
+ 
+5. Decorator 
+	It provides a way to add a connection string to an object of type Client 
+
+	pros:
+		- can add the connection string when the client connects to the signalR hub, instead of keeping it in memory/ in the db 
+		(the connection string is different each time the client connects)
+	cons:
+		- it is easier (and this is the approach I chose for my thesis) to use a HashMap to keep the connection strings.
+		
+
+6. Proxy
+	It provides a more secure authentification  
+	
+	pros:
+		- it is more secure
+	cons:
+		- I don't think there are any  

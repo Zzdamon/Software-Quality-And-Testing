@@ -1,0 +1,11 @@
+Progressive Web Application for Food Delivery Services
+
+
+4. Prototype 
+	It provides a way to copy an object of type Order so that I don't have to wait for the response of the Geolocation API 
+ 
+	pros:
+ 		- less requests to the Geolocation API
+ 		- faster
+ 		- less expensive (each request is payed) 
+ 

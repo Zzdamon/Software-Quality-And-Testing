@@ -1,0 +1,10 @@
+Progressive Web Application for Food Delivery Services
+
+
+3. Builder 
+	Order class has many attributes. Builder provides a constructor with only the mandatory attributes and setters for the others.
+
+	pros:
+		- only one constructor
+		- easy to understand the code
+		- easy to create objects
