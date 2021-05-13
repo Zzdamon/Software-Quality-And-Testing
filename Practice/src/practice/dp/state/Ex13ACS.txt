@@ -1,0 +1,4 @@
+13. Spitalul doreste implementarea unui modul pentru gestiunea pacientilor. Un pacient poate sa
+aiba una din urmatoarele stari: Internat, SubObservatie, Externat. Atunci cand un pacient este
+adus in spital intra in starea Internat. Daca starea sa de sanatate este grava, atunci este trecut in
+starea SubObservatie. Cand se vindeca si este trimis acasa, pacientul intra in starea Externat.

@@ -1,0 +1,6 @@
+10. Pentru fiecare internare trebuie sa se retina informatii cu privire la pacientul internat precum:
+nume, numar de telefon, adresa, etc, precum si informatiile despre salonul unde este internat:
+numar salon, numar pat, numar zile spitalizare, etc. Astfel, daca un pacient este internat de mai
+multe ori de-a lungul timpului, informatiile despre acesta sunt aceleasi si se repeta, ocupand foarte
+multa memorie. Sa se implementeze modulul de memorare al tuturor internarilor astfel incat sa nu
+ocupe memorie foarte multa

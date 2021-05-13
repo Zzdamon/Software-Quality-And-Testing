@@ -1,0 +1,8 @@
+A gym membership:
+ - mandatory has a name and a type (full time or day time)
+ - can have a student discount 
+ - can have access to pool
+ - can have access to sauna
+ - can have a personal trainer
+ - can be VIP (have access to all gyms of the same type)
+ 

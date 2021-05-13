@@ -1,0 +1,4 @@
+1. Compania in mod normal ofera bilete fara bagaj de cala, insa doreste sa introduca acest lucru.
+Astfel in momentul cumpararii biletului nu se pune problema mentionarii faptului ca trebuie tiparit si
+greutatea bagajului de cala. Compania doreste sa introduca acest lucru si doreste sa adauge o noua
+functionalitate ca la rezervarea biletului sa fie trecuta si greutatea bagajului de cala.

@@ -1,0 +1,5 @@
+Agentia de turism AgeTur ofera pahete turistice cu cazare si transport insa
+are in oferta si pachete turistice doar cu cazare sau doar cu transport.
+Toate ofertele fac parte din familia pachetelor turistice.
+
+Sa se implementeze modulul de vanzare de pachete turistice pentru agentia de turism AgeTur

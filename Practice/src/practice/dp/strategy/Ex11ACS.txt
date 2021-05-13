@@ -1,0 +1,3 @@
+11.Este dorita implementarea modului de plata pentru pacientii care au fost internati in spital.
+Modul de plata il decide persoana care plateste in momentul in care trebuie sa faca plata. Plata se
+poate realiza cu cardul sau cash. Sa se implementeze modulul de plata.

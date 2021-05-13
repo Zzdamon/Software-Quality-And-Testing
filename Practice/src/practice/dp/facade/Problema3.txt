@@ -1,0 +1,5 @@
+Pentru verificarea unei persoane un operator ii cere clientului buletinul ca sa verifice daca
+biletul este pe numele sau, dupa care verifica daca acea persoana este cautata de politie, in cadrul unei
+alte aplicatii, apoi trebuie sa verifice daca buletinul este sau nu expirat. Compania doreste sa simplifice
+acest proces, iar operatorul sa furnizeze intr-un singur loc seria de buletin, data expirarii si codul de bilet,
+iar toate verificarile sa se realizeze automat. Sa se implementeze acest modul

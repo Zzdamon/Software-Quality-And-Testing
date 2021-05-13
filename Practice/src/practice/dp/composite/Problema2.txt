@@ -1,0 +1,2 @@
+Compania aeriana doreste realizarea reprezentarea departamentelor, a compartimentelor si
+a sectiilor existente in cadrul aplicatiei printr-o structura arborescenta.
