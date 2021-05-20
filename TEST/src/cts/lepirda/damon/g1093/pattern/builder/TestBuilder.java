@@ -5,6 +5,7 @@ public class TestBuilder {
 		
 		TripBooking trip= new TripBooking.TripBuilder("Vraja Marii").build();
 		TripBooking trip2= new TripBooking.TripBuilder("Vraja Marii").addBreakfast().addNoPeopleInRoom(3).build();
+		TripBooking trip3= new TripBooking.TripBuilder("Vraja Marii").addFloorLevel(3).addSmokingRoom().build();
 
 		
 		//		trip1.hasBreakfast=true;
