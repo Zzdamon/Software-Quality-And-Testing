@@ -12,6 +12,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import ro.ase.csie.cts.g1092.testing.exceptions.WrongAgeException;
+import ro.ase.csie.cts.g1092.testing.exceptions.WrongGradeException;
 import ro.ase.csie.cts.g1092.testing.exceptions.WrongNameException;
 import ro.ase.csie.cts.g1092.testing.models.Student;
 
@@ -92,4 +93,71 @@ public class TestStudent {
 		String newName="Io";
 		student.setName(newName);
 	}
+	
+	@Test 
+	public void testGetGradesAverageOrdering() throws WrongGradeException {
+		ArrayList<Integer> grades= new ArrayList<>();
+		for(int i=6;i<10;i++) {
+			grades.add(i);
+			
+		}
+//		
+//		grades.add(6);
+//		grades.add(6);
+//		grades.add(7);
+		
+		student.setGrades(grades);
+		float expectedAverage=7.5f;
+		float computedAverage= student.getGradesAverage();
+		
+//		float result =(float)1/3 + (float)1/3 + (float)1/3;
+		
+		assertEquals("Testing with sorted array of grades", expectedAverage,computedAverage,0);
+		
+	}
+	
+	@Test
+	public void testGetGradesAverageCardinalityZero() throws WrongGradeException {
+		ArrayList<Integer> grades = new ArrayList<>();
+		student.setGrades(grades);
+		
+		float expectedAverage  =0;
+		float computedAverage = student.getGradesAverage();
+		
+		assertEquals("Testing with empty array of grades", expectedAverage,computedAverage,0);
+	}
+
+	@Test
+	public void testGetGradesAverageCardinalityOne() throws WrongGradeException {
+		ArrayList<Integer> grades = new ArrayList<>();
+		grades.add(Student.MAX_GRADE);
+		student.setGrades(grades);
+		
+		float expectedAverage  =Student.MAX_GRADE;
+		float computedAverage = student.getGradesAverage();
+		
+		assertEquals("Testing with empty array of grades", expectedAverage,computedAverage,0);
+	}
+
+	@Test
+	public void testGetGradesAverageExistanceNullReferenceForGrades() throws WrongGradeException {
+		student.setGrades(null);
+		
+		float expectedAverage= 0;
+		float computedAverage= student.getGradesAverage();
+		
+		assertEquals("Testing with null for grades", expectedAverage,computedAverage,0);
+
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
