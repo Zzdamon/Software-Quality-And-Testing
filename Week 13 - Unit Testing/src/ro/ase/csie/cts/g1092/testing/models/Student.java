@@ -82,5 +82,15 @@ public class Student {
 		
 	}
 	
+	public int getMinGrade() {
+
+		int min=this.grades.get(0);
+		for(int grade:this.grades) {
+			if(min>grade) {
+				min=grade;
+			}
+		}
+		return min;
+	}
 	
 }
